@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const debug = require('debug');
 
-const BUILD_DIR = path.resolve(__dirname, 'src/public');
+const BUILD_DIR = path.resolve(__dirname, 'public');
 const APP_DIR = path.resolve(__dirname, 'src/app');
 const SCSS_DIR = path.resolve(__dirname, 'src/scss');
 const SRC = path.resolve(__dirname, 'src');
