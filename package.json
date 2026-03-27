@@ -22,7 +22,7 @@
         "concurrently": "^7.6.0",
         "nodemon": "^2.0.20",
         "webpack": "^5.104.1",
-        "webpack-cli": "^5.0.1"
+        "webpack-cli": "^7.0.2"
     },
     "dependencies": {
         "express": "^4.22.0",
