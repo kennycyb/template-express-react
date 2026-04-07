@@ -2,9 +2,9 @@
     "name": "template-express-react",
     "version": "1.0.0",
     "description": "Express + React Template",
-    "main": "server.js",
+    "main": "server/server.js",
     "scripts": {
-        "server": "nodemon server.js --exec babel-node",
+        "server": "nodemon server/server.js --exec babel-node",
         "react": "webpack",
         "start": "concurrently \"npm run react\" \"npm run server\""
     },

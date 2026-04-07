@@ -1,16 +1,13 @@
-const webpack = require('webpack');
-const path = require('path');
-const debug = require('debug');
+const path = require('node:path');
 
 const BUILD_DIR = path.resolve(__dirname, 'public');
-const APP_DIR = path.resolve(__dirname, 'src/app');
-const SCSS_DIR = path.resolve(__dirname, 'src/scss');
-const SRC = path.resolve(__dirname, 'src');
+const CLIENT_DIR = path.resolve(__dirname, 'client');
 
-var config = {
-    context: path.join(__dirname, 'src'),
+const config = {
+    context: CLIENT_DIR,
+    mode: 'development',
     devtool: 'inline-source-map',
-    entry: APP_DIR + '/index.jsx',
+    entry: path.join(CLIENT_DIR, 'index.jsx'),
     watch: true,
     output: {
         path: BUILD_DIR,
@@ -27,7 +24,7 @@ var config = {
                 },
             },
             {
-                test: /\.(woff(2)?|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, //to support @font-face rule
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d\.\d\.\d)?$/, //to support @font-face rule
                 loader: 'url-loader',
                 options: {
                     limit: '10000',
@@ -37,7 +34,7 @@ var config = {
             },
             {
                 test: /\.jsx?$/,
-                include: APP_DIR,
+                include: CLIENT_DIR,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
                 options: {
@@ -45,10 +42,6 @@ var config = {
                     plugins: [
                         'react-html-attrs',
                         ['@babel/plugin-proposal-decorators', { legacy: true }],
-                        [
-                            '@babel/plugin-proposal-class-properties',
-                            { loose: true },
-                        ],
                     ],
                 },
             },
@@ -59,8 +52,8 @@ var config = {
         ],
     },
     devServer: {
-        host: 'localhost', // Defaults to `localhost`
-        port: 3000, // Defaults to 8080,
+        host: 'localhost',
+        port: 3000,
         proxy: {
             '^/api/*': {
                 target: 'http://localhost:3000/',
@@ -68,16 +61,6 @@ var config = {
             },
         },
     },
-
-    plugins: debug
-        ? []
-        : [
-              new webpack.optimize.OccurrenceOrderPlugin(),
-              new webpack.optimize.UglifyJsPlugin({
-                  mangle: false,
-                  sourcemap: false,
-              }),
-          ],
 };
 
 module.exports = config;

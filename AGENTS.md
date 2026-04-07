@@ -3,16 +3,16 @@
 ## Architecture
 
 - This repository is a minimal Express + React starter.
-- The server entrypoint is `server.js`, which loads `app.js` and listens on `PORT` or `3000`.
-- `app.js` serves static assets from `public/`.
-- The client entrypoint is `src/app/index.jsx` and webpack writes the bundle to `public/client.min.js`.
-- Keep the current split: server/runtime files in the repo root, client code in `src/app`, and styles in `src/scss`.
+- The server entrypoint is `server/server.js`, which loads `server/app.js` and listens on `PORT` or `3000`.
+- `server/app.js` serves static assets from `public/`.
+- The client entrypoint is `client/index.jsx`, and webpack writes the bundle to `public/client.min.js`.
+- Keep the current split: server/runtime files in `server/`, client code in `client/`, and browser assets in `public/`.
 
 ## Code Style
 
 - Match the existing style in each file instead of normalizing the whole repo.
 - Use 4-space indentation and prefer single quotes where the surrounding file does.
-- Keep CommonJS in Node-side files such as `app.js`, `server.js`, and `webpack.config.js` unless a broader migration is requested.
+- Keep CommonJS in Node-side files such as `server/app.js`, `server/server.js`, and `webpack.config.js` unless a broader migration is requested.
 - Keep React changes simple and compatible with the existing entrypoint pattern.
 
 ## Build And Validation
