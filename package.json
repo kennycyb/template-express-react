@@ -21,7 +21,7 @@
         "babel-plugin-react-html-attrs": "^3.0.5",
         "concurrently": "^10.0.4",
         "nodemon": "^3.1.14",
-        "webpack": "^5.106.2",
+        "webpack": "^5.109.2",
         "webpack-cli": "^7.0.3"
     },
     "dependencies": {
