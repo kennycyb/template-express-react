@@ -13,7 +13,7 @@
         "@babel/cli": "^8.0.1",
         "@babel/core": "^8.0.1",
         "@babel/node": "^8.0.1",
-        "@babel/plugin-proposal-decorators": "^8.0.1",
+        "@babel/plugin-proposal-decorators": "^8.0.2",
         "@babel/plugin-proposal-export-default-from": "^8.0.1",
         "@babel/preset-env": "^8.0.1",
         "@babel/preset-react": "^8.0.1",
