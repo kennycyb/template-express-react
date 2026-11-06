@@ -1,0 +1,9 @@
+.git
+.github
+node_modules
+npm-debug.log*
+pnpm-lock.yaml
+public/client.min.js
+.env
+.env.*
+
